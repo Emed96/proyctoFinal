@@ -202,13 +202,17 @@ header {
 
 main {
   margin: 10vh 0vw;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
 }
 
 .carrusel1Items {
   height: 45vh;
   width: 100%;
-  border-radius: 5%;
-  padding-bottom: 5%;
+  padding: 4% 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -219,14 +223,17 @@ main {
 .carrusel1Items .imgPortada {
   width: 100%;
   height: 30vh;
-  border-radius: 5%;
   background-size: cover;
+  background-position: center;
   opacity: 75%;
   z-index: 0;
 }
 .carrusel1Items .contPortada {
-  padding: 0 5%;
+  width: 95%;
+  padding: 6% 5%;
   text-align: center;
+  border-radius: 5%;
+  opacity: 85%;
 }
 .carrusel1Items .contPortada h3 {
   color: white;
@@ -236,31 +243,78 @@ main {
 }
 
 .carrusel1I1 {
-  background-color: #d49bb9;
-}
-.carrusel1I1 .imgPortada {
   background-image: url(../../images/carruselPrincipal/termosDespedida.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.carrusel1I1 .contPortada {
+  background-color: #d49bb9;
 }
 
 .carrusel1I2 {
-  background-color: #ECE289;
-}
-.carrusel1I2 .imgPortada {
   background-image: url(../../images/imagenes-articulos/arregloGlobos.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.carrusel1I2 .contPortada {
+  background-color: #ECE289;
 }
 
 .carrusel1I3 {
-  background-color: #AAD2D1;
-}
-.carrusel1I3 .imgPortada {
   background-image: url(../../images/imagenes-articulos/recuerdosBoda.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.carrusel1I3 .contPortada {
+  background-color: #AAD2D1;
 }
 
 .carrusel1I4 {
+  background-image: url(../../images/imagenes-articulos/termosPersonalizados.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.carrusel1I4 .contPortada {
   background-color: #B19DA6;
 }
-.carrusel1I4 .imgPortada {
-  background-image: url(../../images/imagenes-articulos/termosPersonalizados.jpg);
+
+.nosotros .contVideoNosotros {
+  width: 100%;
+  height: 20vh;
+  background-color: rgba(195, 136, 173, 0.3529411765);
+  display: flex;
+  justify-content: center;
+}
+.nosotros .contVideoNosotros .videoNosotros {
+  width: 90%;
+  height: 20vh;
+  background-image: url(../../images/termos_playa.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.nosotros .contNosotros {
+  background-color: rgba(195, 136, 173, 0.3529411765);
+  color: white;
+  text-shadow: 0 0 3px black;
+  text-align: center;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+.nosotros .contNosotros h2 {
+  font-size: 3rem;
+}
+.nosotros .contNosotros p {
+  color: white;
+}
+.nosotros .contNosotros .btnLeerMas {
+  background-color: white;
+  padding: 5%;
+  width: 60%;
+  border-radius: 10%;
 }
 
 /*# sourceMappingURL=style.css.map */
