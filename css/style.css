@@ -348,7 +348,7 @@ main {
 .serviciosMain button span {
   color: white;
 }
-.serviciosMain button:active {
+.serviciosMain button:hover {
   background-color: #B686CF;
 }
 
