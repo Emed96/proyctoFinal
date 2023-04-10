@@ -77,10 +77,13 @@ header {
   z-index: 1;
   text-align: center;
   transition: all 0.6s;
-  background-color: #f2b1d4;
+  background-color: #f2bfd1;
+}
+.barraMenu .menu ul {
+  margin-bottom: 0;
+  padding-left: 0;
 }
 .barraMenu .menu .logIn {
-  bottom: 0;
   width: 100%;
 }
 .barraMenu .menu .logIn .iconUser {
@@ -94,11 +97,9 @@ header {
 .barraMenu .menu .menuItem {
   padding: 8% 10%;
 }
-.barraMenu .menuActive {
-  left: 0;
-}
 .barraMenu .menu a {
   color: white;
+  text-decoration: none;
 }
 
 .logo {
@@ -206,6 +207,8 @@ main {
   z-index: 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 1vh;
 }
 
@@ -243,34 +246,34 @@ main {
 }
 
 .carrusel1I1 {
-  background-image: url(../../images/carruselPrincipal/termosDespedida.jpg);
+  background-image: url(../../images/carrusel1/termosDespedida.jpg);
   background-size: cover;
   background-position: center;
 }
 .carrusel1I1 .contPortada {
-  background-color: #d49bb9;
+  background-color: #f2bfd1;
 }
 
 .carrusel1I2 {
-  background-image: url(../../images/imagenes-articulos/arregloGlobos.jpg);
+  background-image: url(../../images/carrusel1/recuerdosBoda.jpg);
   background-size: cover;
   background-position: center;
 }
 .carrusel1I2 .contPortada {
-  background-color: #ECE289;
+  background-color: #AAD2D1;
 }
 
 .carrusel1I3 {
-  background-image: url(../../images/imagenes-articulos/recuerdosBoda.jpg);
+  background-image: url(../../images/carrusel1/arregloGlobos.jpg);
   background-size: cover;
   background-position: center;
 }
 .carrusel1I3 .contPortada {
-  background-color: #AAD2D1;
+  background-color: #FFDAD9;
 }
 
 .carrusel1I4 {
-  background-image: url(../../images/imagenes-articulos/termosPersonalizados.jpg);
+  background-image: url(../../images/carrusel1/termosPersonalizados.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -315,6 +318,38 @@ main {
   padding: 5%;
   width: 60%;
   border-radius: 10%;
+}
+
+.serviciosMain {
+  height: 30vh;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2%;
+  text-align: center;
+}
+.serviciosMain button {
+  background-color: rgba(182, 134, 207, 0.3529411765);
+  border-radius: 10%;
+  height: 100%;
+  text-shadow: 0 0 3px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  padding: 8%;
+  transition: all 0.2s;
+}
+.serviciosMain button i {
+  color: white;
+}
+.serviciosMain button span {
+  color: white;
+}
+.serviciosMain button:active {
+  background-color: #B686CF;
 }
 
 /*# sourceMappingURL=style.css.map */

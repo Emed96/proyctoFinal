@@ -1,38 +1,4 @@
 
-//MOSTRAR Y OCULTAR EL MENU
-
-// const btnMenu = document.querySelector(".btnMenu");
-// const menu = document.querySelector(".menu");
-
-// btnMenu.addEventListener("click", () => {
-//     const linea1 = document.querySelector(".barra-linea1");
-//     const linea2 = document.querySelector(".barra-linea2");
-//     const linea3 = document.querySelector(".barra-linea3");
-//     const fondo2 = document.querySelector(".fondoObscuro2")
-
-//     linea1.classList.toggle("barra-linea1Active");
-//     linea2.classList.toggle("barra-linea2Active");
-//     linea3.classList.toggle("barra-linea3Active");
-//     menu.classList.toggle("menuActive");
-//     fondo2.classList.toggle("fondoObscuro2Active");
-// });
-
-// //MOSTRAR Y OCULTAR EL CARRITO
-
-// const btnCarrito = document.querySelector(".btnCarrito");
-// const fondo = document.querySelector(".fondoObscuro");
-// const carrito = document.querySelector(".cesta");
-
-// btnCarrito.addEventListener("click", () => {
-//     carrito.style.right = "0";
-//     fondo.style.display ="block";
-// });
-
-// fondo.addEventListener("click", () => {
-//     carrito.style.right = "-70vw";
-//     fondo.style.display = "none"
-// })
-
 class Header{
     constructor(header){
         this.header = header;
@@ -90,3 +56,60 @@ class Header{
 }
 
 const h = new Header(document.querySelector("[data-headerIndex]"));
+
+//IMAGENES EN EL CARRUSEL
+
+const itemsIMG_Carrusel = 4;
+const datosCarrusel = [
+    {
+        encabezado: "AQUI VA UN ENCABEZADO",
+        parrafo: "Lorem ipsum dolor sit ametconsectetur adipisicing elit Eos aliquid aut libero quo In quos lorem1000"
+    },
+    {
+        encabezado: "AQUI VA UN ENCABEZADO",
+        parrafo: "Lorem ipsum dolor sit ametconsectetur adipisicing elit Eos aliquid aut libero quo In quos lorem1000"
+    },
+    {
+        encabezado: "AQUI VA UN ENCABEZADO",
+        parrafo: "Lorem ipsum dolor sit ametconsectetur adipisicing elit Eos aliquid aut libero quo In quos lorem1000"
+    },
+    {
+        encabezado: "AQUI VA UN ENCABEZADO",
+        parrafo: "Lorem ipsum dolor sit ametconsectetur adipisicing elit Eos aliquid aut libero quo In quos lorem1000"
+    }
+]
+const itemsCarrusel = document.querySelector(".carousel-inner");
+
+for (let i = 0; i < itemsIMG_Carrusel; i++) {
+    if (i === 0) {
+        itemsCarrusel.innerHTML += 
+        `<div class="carousel-item active" data-bs-interval="5000">
+            <div class="carrusel1Items carrusel1I${i+1}">
+                <div class="imgPortada"></div>
+                <div class="contPortada">
+                    <h3>
+                        ${datosCarrusel[i].encabezado}
+                    </h3>
+                    <p>
+                        ${datosCarrusel[i].parrafo}
+                    </p>
+                </div>
+            </div>
+        </div>`
+    } else {
+        itemsCarrusel.innerHTML += 
+        `<div class="carousel-item">
+            <div class="carrusel1Items carrusel1I${i+1}">
+                <div class="imgPortada"></div>
+                <div class="contPortada">
+                    <h3>
+                        ${datosCarrusel[i].encabezado}
+                    </h3>
+                    <p>
+                        ${datosCarrusel[i].parrafo}
+                    </p>
+                </div>
+            </div>
+        </div>`
+    }
+}
