@@ -94,12 +94,13 @@ header {
   color: white;
   font-size: 1.2rem;
 }
-.barraMenu .menu .menuItem {
-  padding: 8% 10%;
-}
-.barraMenu .menu a {
+.barraMenu .menu .btn-ItemMenu {
+  display: block;
   color: white;
   text-decoration: none;
+  width: 100%;
+  height: 100%;
+  padding: 8% 10%;
 }
 
 .logo {
@@ -120,6 +121,9 @@ header {
   height: 6vh;
   min-width: 100px;
   min-height: 55px;
+}
+.logo a h1 {
+  display: none;
 }
 
 .barraCarrito {
@@ -144,35 +148,71 @@ header {
   top: 0;
   right: -70vw;
   transition: all 0.3s;
-  background-color: #f2b1d4;
+  background-color: white;
 }
 .barraCarrito .cesta .cestaItem {
   width: 100%;
 }
-.barraCarrito .cesta .cestaItem .contenedorTarjetasCarrito {
-  display: grid;
+.barraCarrito .cesta .cestaItem .imgTermo {
+  display: flex;
   justify-content: center;
+}
+.barraCarrito .cesta .cestaItem .card-body {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.barraCarrito .cesta .cestaItem .card-text {
+  display: flex;
+  justify-content: space-between;
+}
+.barraCarrito .cesta .cestaItem .cantidadCarritoHeader {
+  width: 40%;
+  display: flex;
   align-items: center;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-areas: "imgArtCarrito imgArtCarrito nomArtCarrito nomArtCarrito nomArtCarrito" "imgArtCarrito imgArtCarrito inputCantCarrito btnAumDisCarrito btnBasuraCarrito" "imgArtCarrito imgArtCarrito inputCantCarrito btnAumDisCarrito btnBasuraCarrito";
+  gap: 2%;
 }
-.barraCarrito .cesta .cestaItem .contenedorImgArticulo {
-  grid-area: imgArtCarrito;
-  font-size: 100px;
+.barraCarrito .cesta .cestaItem .cantidadCarritoHeader button {
+  background-color: rgba(190, 190, 190, 0.7490196078);
+  border-radius: 15%;
+  border: #a6a6a6 1px;
+  width: 33%;
+  height: 1.8rem;
 }
-.barraCarrito .cesta .cestaItem .contenedorNombreArticulo {
-  grid-area: nomArtCarrito;
+.barraCarrito .cesta .cestaItem .cantidadCarritoHeader button i {
+  color: white;
+  text-shadow: 0 0 3px black;
 }
-.barraCarrito .cesta .cestaItem .contenedorCantidadArticulo {
-  grid-area: inputCantCarrito;
+.barraCarrito .cesta .cestaItem .cantidadCarritoHeader button:active {
+  background-color: #a6a6a6;
 }
-.barraCarrito .cesta .cestaItem .contenedorBtnAumentarDisminuirCantidad {
-  grid-area: btnAumDisCarrito;
+.barraCarrito .cesta .cestaItem .cantidadCarritoHeader input {
+  background-color: white;
+  border: solid 1px;
+  width: 33%;
+  text-align: center;
+  border-radius: 20%;
 }
-.barraCarrito .cesta .cestaItem .contenedorBtnEliminar {
-  grid-area: btnBasuraCarrito;
-  font-size: 50px;
+.barraCarrito .cesta .cestaItem .agregarCarrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.barraCarrito .cesta .btnComprar {
+  display: block;
+  color: white;
+  text-shadow: 0 0 3px black;
+  width: 90%;
+  font-size: 1.2rem;
+  align-self: center;
+  background-color: #AAD2D1;
+  border-radius: 7%;
+  padding: 5% 0;
+}
+.barraCarrito .cesta .btnComprar:active {
+  background-color: #8dbbbb;
 }
 
 .fondoObscuro {
@@ -322,7 +362,8 @@ main {
 
 .serviciosMain {
   height: 30vh;
-  width: 80%;
+  width: 98%;
+  padding: 5%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -348,8 +389,131 @@ main {
 .serviciosMain button span {
   color: white;
 }
-.serviciosMain button:hover {
+.serviciosMain button:active {
   background-color: #B686CF;
+}
+
+.productosMain {
+  height: 60vh;
+  width: 100%;
+}
+.productosMain button {
+  width: 10%;
+}
+.productosMain .carruselProdMain {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.productosMain .imgTermo {
+  display: flex;
+  justify-content: center;
+}
+.productosMain .card-body {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.productosMain .card-text {
+  display: flex;
+  justify-content: space-between;
+}
+.productosMain .agregarCarrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.productosMain .agregarCarrito label {
+  align-self: center;
+  width: 30%;
+}
+.productosMain .agregarCarrito label span {
+  padding-right: 5%;
+}
+.productosMain .agregarCarrito .cantidadCarritoMain {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  gap: 2%;
+}
+.productosMain .agregarCarrito .cantidadCarritoMain button {
+  background-color: rgba(190, 190, 190, 0.7490196078);
+  border-radius: 15%;
+  border: #a6a6a6 1px;
+  width: 33%;
+  height: 1.8rem;
+}
+.productosMain .agregarCarrito .cantidadCarritoMain button i {
+  color: white;
+  text-shadow: 0 0 3px black;
+}
+.productosMain .agregarCarrito .cantidadCarritoMain button:active {
+  background-color: #a6a6a6;
+}
+.productosMain .agregarCarrito .cantidadCarritoMain input {
+  background-color: white;
+  border: solid 1px;
+  width: 33%;
+  text-align: center;
+  border-radius: 20%;
+}
+.productosMain .btnAgregar {
+  color: white;
+  text-shadow: 0 0 3px black;
+  width: 80%;
+  height: 2.5rem;
+  align-self: center;
+  background-color: #AAD2D1;
+  border-radius: 7%;
+}
+.productosMain .btnAgregar:active {
+  background-color: #8dbbbb;
+}
+.productosMain .card {
+  background-color: white;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer {
+  width: 100%;
+  height: min-content;
+  background: rgb(170, 193, 222);
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  padding: 10% 5%;
+  text-align: center;
+}
+footer .since span {
+  color: white;
+  text-shadow: 0 0 3px black;
+}
+
+.logoFooter {
+  background-image: url(../../images/c.jpg);
+  background-size: cover;
+  background-position: center center;
+  border-radius: 50%;
+  width: 30vw;
+  height: 30vw;
+}
+
+.seccionesFooter .accordion-item {
+  border: none;
+  background: none;
+}
+.seccionesFooter .accordion-item .accordion-button {
+  background-color: #aac1de;
+  color: white;
+  text-shadow: 0 0 3px black;
+}
+.seccionesFooter .accordion-item .accordion-body span {
+  color: white;
+  text-shadow: 0 0 3px black;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,11 +1,14 @@
+import termos_db from './data.js'
 
 class Header{
-    constructor(header){
+    constructor(header, termos){
         this.header = header;
+        this.termos = termos.termos;
 
         //Elementos Menu
         this.menu = header.querySelector(".menu");
         this.btnMenu = header.querySelector(".btnMenu");
+        this.btnItemMenu = header.querySelectorAll('[data-btn-ItemMenu]');
         this.linea1 = header.querySelector(".barra-linea1");
         this.linea2 = header.querySelector(".barra-linea2");
         this.linea3 = header.querySelector(".barra-linea3");
@@ -24,16 +27,27 @@ class Header{
             }
         });
 
+        this.btnItemMenu.forEach(btnMenu => {
+            btnMenu.addEventListener('click', () => {
+                this.ocultarMenu();
+            });
+        });
+
         this.fondo2.addEventListener('click', this.ocultarMenu.bind(this));
 
         this.btnCarrito.addEventListener("click", () => {
             this.carrito.style.right = "0";
             this.fondo.style.display ="block";
             this.ocultarMenu();
+
+            //Despliegue Articulos Carrito
+            //console.log(sessionStorage.getItem("1"));
+            this.desplgarArticulos();
         });
 
         this.fondo.addEventListener('click', () => {
             this.carrito.style.right = "-70vw";
+            this.carrito.innerHTML = "";
             this.fondo.style.display = "none";
         })
     }
@@ -53,9 +67,57 @@ class Header{
         this.linea3.style.transform = "translate(10%, 50%) rotate(-45deg)";
         this.fondo2.style.display = "block";
     }
+
+    desplgarArticulos(){
+        this.termos.forEach(termo => {
+            const articulo = JSON.parse(sessionStorage.getItem(termo["id"]));
+            if (articulo){
+                this.carrito.innerHTML += 
+                `<li class="cestaItem">
+
+                    <div class="card" style="width: 14rem;">
+                        <div class="imgTermo">
+                            <img src="${termo["pathIMG"]}" alt="Termo-${termo["id"]}">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">${termo["nom"]}</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary codigo">${termo["id"]}</h6>
+                            <div class="card-text">
+                                <span>${termo["tipo"]}</span>
+                                <span>$${articulo*termo["precio"]}</span>
+                            </div>
+                            <div class="agregarCarrito">
+                                <label for="cantidad-${termo["id"]}">
+                                    <span>Cantidad</span>
+                                </label>
+                                <div class="cantidadCarritoHeader">
+                                    <button type="button" class="btn-Menos" data-btnMenos>
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <input class="cantidadCarrito" type="number" id="cantidad-${termo["id"]}" min="1" value="${articulo}">
+                                    <button type="button" class="btn-Mas" data-btnMas>
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                                <button class="eliminarDelCarrito">
+                                    <i class='bx bx-trash'></i>
+                                </button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </li>`;
+            }
+        });
+
+        this.carrito.innerHTML += 
+        `<button class="btnComprar" type="button">
+            COMPRAR
+        </button>`;
+    }
 }
 
-const h = new Header(document.querySelector("[data-headerIndex]"));
+const h = new Header(document.querySelector("[data-headerIndex]"), termos_db);
 
 //IMAGENES EN EL CARRUSEL
 
@@ -113,4 +175,3 @@ for (let i = 0; i < itemsIMG_Carrusel; i++) {
         </div>`
     }
 }
-

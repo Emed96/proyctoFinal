@@ -34,16 +34,16 @@
                 <div class="menu">
                     <ul>
                         <li class="menuItem">
-                            <a href="#nosotros">NOSOTROS</a>
+                            <a href="#nosotros" class="btn-ItemMenu" data-btn-ItemMenu>NOSOTROS</a>
                         </li>
                         <li class="menuItem">
-                            <a href="#">GALERIA</a>
+                            <a href="#" class="btn-ItemMenu" data-btn-ItemMenu>GALERIA</a>
                         </li>
                         <li class="menuItem">
-                            <a href="#servicios">SERVICIOS</a>
+                            <a href="#servicios" class="btn-ItemMenu" data-btn-ItemMenu>SERVICIOS</a>
                         </li>
                         <li class="menuItem">
-                            <a href="#">CONTACTO</a>
+                            <a href="#" class="btn-ItemMenu" data-btn-ItemMenu>CONTACTO</a>
                         </li>
                     </ul>
                     <ul>
@@ -57,7 +57,9 @@
                 </div>
             </nav>
             <div class="logo">
-                <a href="#"><div class="logoIMG"> </div></a>
+                <a href="#"><div class="logoIMG">
+                    <h1>CRAFTING</h1>     
+                </div></a>
             </div>
             <nav class="barraCarrito">
                 <button class="btnCarrito">
@@ -65,34 +67,6 @@
                 </button>
                 <ul class="cesta">
                     <!-- AGREGAR ELEMENTOS AL CARRITO -->
-                    <li class="cestaItem">
-                        <div class="contenedorTarjetasCarrito">
-                            <div class="contenedorImgArticulo">
-                                <div class="imgArticulo">
-                                    <i class='bx bx-image-alt'></i>
-                                </div>
-                            </div>
-                            <div class="contenedorNombreArticulo">
-                                <h3 class="nombreArticulo">nombre articulo</h3>
-                            </div>
-                            <div class="contenedorCantidadArticulo">
-                                <!-- <input type="text" class="cantidadArticulo"> -->
-                            </div>
-                            <div class="contenedorBtnAumentarDisminuirCantidad">
-                                <button class="btnAumentar">
-                                    <i class='bx bxs-chevron-up'></i>
-                                </button>
-                                <button class="btnDisminuir">
-                                    <i class='bx bxs-chevron-down' ></i>
-                                </button>
-                            </div>
-                            <div class="contenedorBtnEliminar">
-                                <button class="eliminarDelCarrito">
-                                    <i class='bx bx-trash'></i>
-                                </button>
-                            </div>
-                        </div>
-                    </li>
                 </ul>
             </nav>
             <div class="fondoObscuro"></div>
@@ -145,41 +119,131 @@
                     <span>LEER MAS</span>
                 </button>
             </div>
-            <div class="espaciador">
+            <div class="espaciador" id="servicios">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#c388ad" fill-opacity="0.35" d="M0,128L34.3,160C68.6,192,137,256,206,245.3C274.3,235,343,149,411,106.7C480,64,549,64,617,90.7C685.7,117,754,171,823,186.7C891.4,203,960,181,1029,181.3C1097.1,181,1166,203,1234,181.3C1302.9,160,1371,96,1406,64L1440,32L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path></svg>
             </div>
         </div>
 
         <!-- SERVICIOS -->
 
-        <div class="serviciosMain" id="servicios">
-            <button class="termos-ServiciosMain btn-ServicionMain">
+        <div class="serviciosMain">
+            <button class="termos-ServiciosMain btn-ServicionMain" data-aos="zoom-in">
                 <i class="fi fi-rs-glass"></i>
                 <span>TERMOS</span>
             </button>
-            <button class="recuerdos-ServiciosMain btn-ServicionMain">
+            <button class="recuerdos-ServiciosMain btn-ServicionMain" data-aos="zoom-in">
                 <i class="fi fi-rr-gift"></i>
                 <span>RECUERDOS</span>
             </button>
-            <button class="globos-ServiciosMain btn-ServicionMain">
+            <button class="globos-ServiciosMain btn-ServicionMain" data-aos="zoom-in">
                 <i class="fi fi-rr-balloons"></i>
                 <span>GLOBOS</span>
             </button>
-            <button class="boda-ServiciosMain btn-ServicionMain">
+            <button class="boda-ServiciosMain btn-ServicionMain" data-aos="zoom-in">
                 <i class="fi fi-ss-rings-wedding"></i>
                 <span>BODAS</span>
             </button>
+        </div>
+
+        <!-- PRODUCTOS -->
+        <div class="productosMain">
+            <div id="carouselProdMain" class="carousel slide carruselProdMain" data-bs-touch="true" data-bs-theme="dark">
+                <div class="carousel-inner">
+                    <!-- AQUI VAN LAS TARJETAS -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselProdMain" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselProdMain" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
     </main>
 
     <footer>
         <div class="logoFooter"></div>
-        <div class="seccionesFooter"></div>
-        <div class="redesSociales"></div>
+        <div class="seccionesFooter accordion" id="accordionFooter">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        NOSOTROS
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFooter">
+                    <div class="accordion-body">
+                        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto velit recusandae id molestias, doloremque quasi ex illum accusamus veritatis hic quaerat suscipit odio quidem quam excepturi harum nihil? Eligendi, doloribus.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        SERVICIOS
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse"  data-bs-parent="#accordionFooter">
+                    <div class="accordion-body">
+                        <button class="serviciosFooter">
+                            <span>TERMOS</span>
+                        </button>
+                        <button class="serviciosFooter">
+                            <span>RECUERDOS</span>
+                        </button>
+                        <button class="serviciosFooter">
+                            <span>GLOBOS</span>
+                        </button>
+                        <button class="serviciosFooter">
+                            <span>BODAS</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        CONTACTANOS
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse"  data-bs-parent="#accordionFooter">
+                    <div class="accordion-body">
+                        <div class="contactarEmail">
+                             <span>INGRESAR FORM PARA ENVIAR UN CORREO </span>
+                        </div>
+                        <div class="separadorContactoFooter">
+                             <span>-----or-----</span> 
+                        </div>
+                        <div class="contactarWhatsapp">
+                            <button class="enviarWhatsappFooter">
+                                 <span>BOTON PARA REDIRIGIR A WHATSAPP</span> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        GALERIA
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse"  data-bs-parent="#accordionFooter">
+                    <div class="accordion-body">
+                        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto velit recusandae id molestias, doloremque quasi ex illum accusamus veritatis hic quaerat suscipit odio quidem quam excepturi harum nihil? Eligendi, doloribus.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="since">
+            <span>SINCE 2022</span>
+        </div>
+        
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./src/index.js"></script>
-
+    <script type="module" src="./src/data.js"></script>
+    <script type="module" src="./src/index.js"></script>
     <script>
         AOS.init();
     </script>
